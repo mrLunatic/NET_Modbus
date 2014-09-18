@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{448E7A42-6520-4D2A-AB4E-313794014D59}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Modbus</RootNamespace>
+    <AssemblyName>ModbusRTU Lib</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ApplicationDataUnit.cs" />
+    <Compile Include="RTU\RTU CRC.cs" />
+    <Compile Include="IModbus Device.cs" />
+    <Compile Include="Common\Exception.cs" />
+    <Compile Include="BaseModbusServer.cs" />
+    <Compile Include="IModbusServer.cs" />
+    <Compile Include="IModbusServerManager.cs" />
+    <Compile Include="Common\Protocol Data Unit.cs" />
+    <Compile Include="IModbusClient.cs" />
+    <Compile Include="RTU\RTU ADU.cs" />
+    <Compile Include="RTU\RTU Client.cs" />
+    <Compile Include="Common\PDU\0x10 Write Multiple Registers.cs" />
+    <Compile Include="Common\PDU\0x0F Write Multiple Coils.cs" />
+    <Compile Include="Common\PDU\0x06 Write Single Register.cs" />
+    <Compile Include="Common\PDU\0x05 Write Single Coil.cs" />
+    <Compile Include="Common\PDU\0x04 Read Input Registers.cs" />
+    <Compile Include="Common\PDU\0x03 Read Holding Registers.cs" />
+    <Compile Include="Common\PDU\0x02 Read Discrete Inputs.cs" />
+    <Compile Include="Common\PDU\0x01 Read Coils.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RTU\RTU Device.cs" />
+    <Compile Include="RTU\RTU Exception.cs" />
+    <Compile Include="RTU\RTU Server.cs" />
+    <Compile Include="TCP\TCP ADU.cs" />
+    <Compile Include="TCP\TCP Device.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
